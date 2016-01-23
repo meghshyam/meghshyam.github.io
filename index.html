@@ -1,0 +1,81 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"> 
+<link rel="stylesheet" href="reset.css">
+<title> Mosaicing Scenes with a Quadcopter</title>
+
+<style type="text/css">
+.divCenter {
+	margin:0px auto;
+	width: 60%;
+	padding:20px 0 0 0
+}
+</style>
+
+</head>
+<body text="#000000" link="#ff0000" alink="#00ff00" vlink="#0000ff" onload="fload()">
+
+<div class="divCenter">
+	<h1 class="big" align="center">Mosaicing Scenes with a Quadcopter</h1>
+</div>
+<div class="divCenter">
+
+<div align="center"><img src="teaser.png" width="80%" align="center"></div>
+
+<h2> Abstract </h2>
+<p align="justify">
+This paper focuses on a method to construct panoramas captured from
+  a quadcopter, and a new mosaicing sub-problem when the scene
+  contains significant regions of vacant spaces.  These vacant spaces
+  yield little to no features to match input images making them
+  challenging for existing mosaicing techniques.
+  We describe a framework that is able to handle this unique input by
+  leveraging the availability of the inertial measurement unit (IMU)
+  data from the quadcopter.  
+
+  Specifically, our method uses the accompanying IMU data to select a
+  subset of images that contain interesting scene content. When the
+  scene is such that this subset contains no vacant space, an
+  appropriate panorama is effected; however, with featureless spaces,
+  existing mosaicing methods do not work.  In this paper, the subset
+  is partitioned into multiple clusters, again using the IMU data.
+  These subsets can now be stitched into a series of mini-panoramas,
+  but a complete mosaic is not yet available. The gaps between these
+  mini-panoramas represent regions of featureless spaces in the scene.
+  Therefore, we once again use the IMU data together with a novel
+  stereo reconstruction to determine appropriate portions of the
+  images to complete the panorama. We demonstrate the efficacy of our
+  approach on a number of input sequences that cannot to be mosaiced
+  by existing methods.</p>
+<p><strong>Publications:</strong></p>
+<ul>
+<li><em>Mosaicing Scenes with a Quadcopter </em>[<a href="" target="_blank">pdf</a>], WACV, 2016.</li>
+</ul>
+</div>
+
+
+<div class="divCenter">
+<hr>
+<h2> Dataset</h2>
+<p>Please download datasets at <a href="" target="_blank">here</a>. It covers four scenarios whose results are presented in the paper.</p>
+
+</div>
+
+<div class="divCenter">
+<hr>
+<h2>C++ Code</h2>
+<p>Please download C++ code at <a href="" target="_blank">here</a>. Please follow the instructions given in readme.txt. Please ensure that you have OpenCV 2.4.9 to run this code.</p>
+</div>
+
+<div class="divCenter">
+<hr>
+<h2> People</h2>
+<table border="0">
+<tbody>
+<tr><td width="200px"><a href="http://www.cse.iitb.ac.in/~meghshyam/">Meghshyam g. Prasad</a></td><td><small>meghshyam at cse.iitb.ac.in</small></td></tr>
+<tr><td width="200px"><a href="http://www.cse.iitb.ac.in/~sharat/">Sharat Chandran</a></td><td><small>sharat at cse.iitb.ac.in</small></td></tr>
+<tr><td width="200px"><a href="http://www.comp.nus.edu.sg/~brown/">Michael S. BROWN</a></td><td><small>brown at comp.nus.edu.sg</small></td></tr>
+</tbody></table>
+</div>
+<p align="center" color="gray"> Last updated: 19 January 2016 </p>
+
+
+</body></html>
