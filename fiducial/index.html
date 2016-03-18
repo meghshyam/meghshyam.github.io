@@ -1,0 +1,80 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"> 
+<link rel="stylesheet" href="reset.css">
+<title>Motion Blur Resilient Fiducial</title>
+
+<style type="text/css">
+.divCenter {
+	margin:0px auto;
+	width: 60%;
+	padding:20px 0 0 0
+}
+</style>
+
+</head>
+<body onload="fload()" alink="#00ff00" link="#ff0000" text="#000000" vlink="#0000ff">
+
+<div class="divCenter">
+	<h1 class="big" align="center">A Motion Blur Resilient Fiducial For Quadcopter Imaging
+</h1>
+</div>
+<div class="divCenter">
+
+<div align="center"><img src="teaser.png" align="middle" width="80%"></div>
+
+<h2> Abstract </h2>
+<p align="justify">
+Fiducials are commonly placed in environments to provide a uniquely identifiable object in the scene. In quad-
+copter applications, these fiducials are often used to evaluate planning algorithms given that ground truth positions
+can be detected from the quadcopter's camera. Low cost quadcopters, however, are subject to quick and
+unstable motions that can cause significant motion blur that severely affects the detection rate of existing fiducials. This
+problem motivated us to design a fiducial that is robust to motion blur. Our proposed design uses concentric circles
+with the observation that the direction perpendicular to the motion blur direction will be relatively unaffected by the
+blur. As a result, an appropriate fiducial code orthogonal to the blur direction can be recognized. Since the direc-
+tion of motion blur is unknown, the circular design is good for all motion blur directions. We describe the design of
+binary fiducials, and also a detection algorithm. We show that our marker can significantly outperform existing fiducials in scenes captured with a quadcopter.
+</p>
+<p><strong>Publications:</strong></p>
+<ul>
+<li><em>A Motion Blur Resilient Fiducial For Quadcopter Imaging</em>, [<a href="http://www.comp.nus.edu.sg/~mgprasad/fiducial/files/wacv2015_fiducial.pdf" target="_blank">pdf</a>], WACV, 2015.</li>
+</ul>
+</div>
+
+
+<div class="divCenter">
+<hr>
+<h2> Dataset</h2>
+<p>Please download dataset at <a href="http://www.comp.nus.edu.sg/~mgprasad/fiducial/files/dataset_upload.zip" target="_blank">here</a>.</p>
+
+<p align="justify">This dataset contains  For more information, 
+ please refer to the ReadMe.txt file.</p>
+
+</div>
+
+<div class="divCenter">
+<hr>
+<h2>C/C++ Code</h2>
+<p>C/C++ Code can be found <a href="http://www.comp.nus.edu.sg/~mgprasad/fiducial/files/code_upload.zip" target="_blank">here</a>. 
+Instructions to build/run this code can be found in readme.txt
+Please make sure your computer have OpenCV 2.4.9 to run this code.</p>
+</div>
+
+<div class="divCenter">
+<hr>
+<h2>Results</h2>
+<iframe width="854" height="510" src="http://www.youtube.com/embed/ibf9P-Coofw" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<div class="divCenter">
+<hr>
+<h2> People</h2>
+<table border="0">
+<tbody>
+<tr><td width="200px"><a href="http://www.comp.nus.edu.sg/~mgprasad/">Meghshyam Prasad</a></td><td><small>mgprasad at comp.nus.edu.sg</small></td></tr>
+<tr><td width="200px"><a href="http://www.cse.iitb.ac.in/~sharat/">Sharat Chandran</a></td><td><small>sharat at cse.iitb.ac.in</small></td></tr>
+<tr><td width="200px"><a href="http://www.comp.nus.edu.sg/%7Ebrown/">Michael S. BROWN</a></td><td><small>brown at comp.nus.edu.sg</small></td></tr>
+</tbody></table>
+</div>
+<p color="gray" align="center"> Last updated: 6 November 2014 </p>
+
+
+</body></html>
