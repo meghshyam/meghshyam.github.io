@@ -1,6 +1,6 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html >
 <head>
 
 <title>Exploration Through Quadcopter</title>
@@ -8,23 +8,23 @@
 <meta name="description" content="FTM" />
 
 <link rel="stylesheet" href="touching.css" type="text/css" />
-<script src=”//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js”>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
 </script>
 <script>
-jQuery(document).ready(function () {
-  $(‘.scroll-to-top’).hide();
+$(document).ready(function () {
+  $(".scroll-to-top").hide();
   //Check to see if the window is top if not then display button
-  jQuery(window).scroll(function () {
+  $(window).scroll(function () {
   if ($(this).scrollTop() > 200) {
-    $(‘.scroll-to-top’).fadeIn();
+    $(".scroll-to-top").fadeIn();
   } else {
-    $(‘.scroll-to-top’).fadeOut();
+    $(".scroll-to-top").fadeOut();
   }
 });
  
 //Click event to scroll to top
-jQuery(‘.scroll-to-top’).click(function () {
-  jQuery(‘html, body’).animate({ scrollTop: 0 }, 800);
+$(".scroll-to-top").click(function () {
+  $("html, body").animate({ scrollTop: 0 }, 800);
   return false;
   });
 });
@@ -122,6 +122,12 @@ able from an inertial measurement unit (IMU) onboard an inexpensive quadcopter.<
  <h2> Imaging Multiplanar Scenes </h2>
 </div>
 <h3>Challenges</h3>
+<li>Homography-based mosaicing algorithms can mosaic only if the scene lies on a single 
+planar surface.</li>
+<li> Manually controlling a quadcopter to image large planar regions smoothly by
+keeping a constant distance from the imaging plane is very difficult because of the
+tendency of quadcopter to drift from its desired position.
+</li>
 <center>
 <img width=600 src=images/JlinkageProblem.jpg>
 </center>
