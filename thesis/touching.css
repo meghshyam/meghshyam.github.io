@@ -1,6 +1,6 @@
 body {
        background: #000000 top left;
-       font-size: 13px;
+       font-size: 15px;
        font-family: Verdana, Arial, SunSans-Regular, Sans-Serif;
        color:#564b47;
        padding:5px;
@@ -48,6 +48,7 @@ img.download {vertical-align:middle;}
 
 
 #banner {
+    left: 230px;
     height:114px;
     text-align: center;
     background:  url('header2.jpg') bottom center;
@@ -66,8 +67,8 @@ u {
     text-decoration:none;
 }
 
-#content {
-
+#content {	
+	top:114px;	
     background:#ffffff ;
     padding: 10px 20px 10px 10px;
     margin-left: 230px;
@@ -96,6 +97,7 @@ p, pre{
 }
 
 #left {
+    position: fixed;
     float: left;
     width: 230px;
     margin: 0px;
@@ -132,7 +134,7 @@ p, pre{
     color: #9A1212;
     text-decoration: none;
     text-align: left;
-    padding:10px;
+    padding:5px;
 
 }
 
@@ -151,14 +153,12 @@ font-size: 10px;
 }
 
 .scroll-to-top {
-display: block;
+display: none;
 position: fixed; bottom: 30px; right: 50px;
 width: 80px;
-height: 25px;
+height: 50px;
 font: bold 0.9em/1.2em Arial, Helvetica, sans-serif; color: #bbb; text-transform: uppercase; text-decoration: none;
-padding: 10px;
-background-color:black;
+background-color:none;
 border-radius: 5px;
-box-shadow: 5px 5px 1px #333;
 text-align:center;
 }

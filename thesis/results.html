@@ -7,8 +7,34 @@
 
 
 <link rel="stylesheet" href="touching.css" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+</script>
+<script>
+$(document).ready(function () {
+  $(".scroll-to-top").hide();
+  //Check to see if the window is top if not then display button
+  $(window).scroll(function () {
+  if ($(this).scrollTop() > 200) {
+    $(".scroll-to-top").fadeIn();
+  } else {
+    $(".scroll-to-top").fadeOut();
+  }
+});
+ 
+//Click event to scroll to top
+$(".scroll-to-top").click(function () {
+  $("html, body").animate({ scrollTop: 0 }, 800);
+  return false;
+  });
+});
+</script>
+
 </head>
 <body>
+<div class="scroll-to-top">
+<a href=”#”>Back<br>to Top</a>
+</div>
+
 <div id="container">
 <div id="banner">
 <div id="bannertitle">Exploration Through Quadcopter</div>
@@ -22,7 +48,13 @@
     <li><a href="intro.html">Introduction</a></li>
 
     <li><a href="summary.html">Summary</a></li>
-    <li><a href="results.html">Results</a></li>
+    <li><a href="results.html">Results</a>
+	<ul class=submenu>
+	<li><a href="results.html#vacant">Mosaicing Scenes With Vacant Spaces</a></li>
+<li><a href="results.html#multiplanar">Imaging Multiplanar Scenes</a></li>
+<li><a href="results.html#fiducial">Detecting Fiducials Under Blur</a></li>
+</ul>
+</li>
 <!--    <li><a href="hybrid.html">Results</a></li>-->
   </ul>
 </div> 
@@ -31,12 +63,49 @@
 <div id="content">
   <h1><u>Results</u></h1>
     <br />
-<h2>Mosaicing Scenes through Vacant Spaces</h2>
-<center><img height=350 src=teaser.png></center>
+<div id = vacant>
+<h2>Mosaicing Scenes With Vacant Spaces</h2>
+</div>
+The result of our algorithm on a scene containing vacant spaces is shown in Figure 1.
+In this experiment, the input stream had about 4300 images. The selection algorithm pruned the video into five images. A sample of the selected images are seen in Figure 1(Left).
 
+<figure>
+<center><img height=350 src=images/teaser.png>
+<figcaption style="padding:10px;">Figure 1: Output of our algorithm on a scene containing vacant spaces. </figcaption>
+</center>
+</figure>
+
+There were two disconnected components in the resulting graph. Adobe Photoshop was unable to produce any reasonable output as seen in
+Figure 1.  The scene, captured from a distance is also shown.  We see a better orthographic view of the posters in our result shown in Figure 1(right bottom).
+
+
+<div id = multiplanar>
 <h2> Imaging Multiplanar Scenes </h2>
+</div>
+Our experiments are done on various setups covering multiple planes. In one such experiment, paintings were arranged in the convex fashion as shown in Figure 2 (Top-Left). We have selected the area to be imaged as shown in Figure 2 (Top-Right). In the
+path planning stage, overall 30 (9 from the left plane, 12 from the middle plane, and 9
+from the right plane) positions to cover full region are estimated. Images captured from
+those positions are mosaiced using our algorithm to get the final mosaicing output as
+shown in the Figure 2 (Bottom).
 
+<figure>
+<center><img height=350 src=images/multiplanarConvexResult.png>
+<figcaption style="padding:10px;">Figure 2: Imaging multiplanar scene. </figcaption>
+</center>
+</figure>
+
+
+<div id = fiducial>
+</div>
 <h2> Detecting Fiducials under Motion Blur </h2>
+We put our fiducials on the quadcopter so that we can reliably recognize the quadcopters under motion. As seen in figure 3,
+we could detect the code embedded in our fiducial put on the quadcopter, in the presence of significant amount of motion blur.
+<figure>
+<center><img height=250 src=images/fiducialResult.png>
+<figcaption style="padding:10px;">Figure 3: Detecting fiducials put on the quadcopter. </figcaption>
+</center>
+</figure>
+
 
 </div><!-- end content -->
 </div><!-- end inner -->
