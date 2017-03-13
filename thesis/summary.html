@@ -121,21 +121,51 @@ able from an inertial measurement unit (IMU) onboard an inexpensive quadcopter.<
 <div id="multiplanar">
  <h2> Imaging Multiplanar Scenes </h2>
 </div>
+We have many circumstances where the input scene is spread over multiple planes.
+In such cases, we would like to image each planar region orthographically and then 'unroll'
+the whole scene by joining the individual mosaics so that we get the output mosaic of the
+input scene as if it is present on a single plane.
+
 <h3>Challenges</h3>
-<li>Homography-based mosaicing algorithms can mosaic only if the scene lies on a single 
-planar surface.</li>
+<ul>
+<li>Homography-based mosaicing algorithms cannot mosaic scenes spread over multiplanar surface.</li>
+
 <li> Manually controlling a quadcopter to image large planar regions smoothly by
-keeping a constant distance from the imaging plane is very difficult because of the
-tendency of quadcopter to drift from its desired position.
-</li>
+keeping a constant distance from the imaging plane is very difficult.</li>
+
+<li> A quadcopter has to be maneuvered along an estimated path such that it will cover
+the input scene in minimum time.</li>
+
+<li> We require accurate 3D coordinates of the region to be imaged on the fly for doing efficient path planning.</li>
+
+<li>Existing method like PTAM creates a 3D map for camera-based navigation of a quadcopter. However, it is not 
+sufficiently precise for our purposes due to inaccuracies in scale.</li>
+
+<li> Multiplanar imaging through quadcopter requires detection of multiplanar bounded regions
+in real-time.</li>
+
+<li>Existing method like J-linkage do not output the boundaries of planar regions as well as remove noisy points.</li>
+</ul>
 <center>
 <img width=600 src=images/JlinkageProblem.jpg>
 </center>
-<ul>
-</ul>
 
 <h3>Contributions</h3>
 <ul>
+<li> We probe the input scene through a quadcopter, calculate the 3D positions of feature
+points using PTAM based method.</li>
+
+<li> We use our algorithm, an improvement over J-linkage [8] to detect multiplanar bounded regions from the area 
+marked by the user through our user interface.</li>
+
+<li> Path planning is done for each planar bounded region to determine the camera positions in such a way that 
+images captured from those positions encompass the scene in an optimal manner.</li>
+
+<li>The quadcopter is autonomously maneuvered along the estimated path and videos are captured at target points. </li>
+
+<li>For each planar bounded region, the appropriate frame from each video is found and then given to a mosaicing algorithm. </li>
+
+<li>All individual mosaics are joined to get a full unrolled view as if the whole scene is present on a single plane.</li>
 </ul>
 
 <h3> Overview</h3>
@@ -147,14 +177,23 @@ tendency of quadcopter to drift from its desired position.
  <h2> Detecting Fiducials Under Blur</h2>
 </div>
 <h3>Challenges</h3>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+
 <center>
 <img width=600 src=images/ARTagBlur.png>
 </center>
-<ul>
-</ul>
 
 <h3>Contributions</h3>
 <ul>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
 </ul>
 
 <h3> Overview</h3>
