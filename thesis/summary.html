@@ -176,12 +176,19 @@ images captured from those positions encompass the scene in an optimal manner.</
 <div id="fiducial">
  <h2> Detecting Fiducials Under Blur</h2>
 </div>
+A single quadcopter is not sufficient for imaging large multiplanar scenes due to energy
+constraints. Instead, we may use multiple quadcopters in collaboration for imaging mul-
+tiplanar scenes. In such cases, we have to identify each quadcopter uniquely for accurate
+collaboration among multiple quadcopters.
+
 <h3>Challenges</h3>
 <ul>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
+<li>Jerky and swift movements of quadcopter introduces motion blur challenging tracking of quadcopter.</li>
+<li>Most existing fiducials such as ARTag are not designed to handle motion blur.</li>
+<li>There may be large discontinuities in the pattern’s position due to missing video frames from the
+quadcopter’s wireless communication module. </li>
+<li>Missing video frames make it challenging to apply tracking algorithms that can
+exploit temporal coherence for determining the fiducial’s position.</li>
 </ul>
 
 <center>
@@ -190,10 +197,15 @@ images captured from those positions encompass the scene in an optimal manner.</
 
 <h3>Contributions</h3>
 <ul>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
+<li>We propose a fiducial that is designed to be resilient to motion blur.</li>
+<li>When our fiducial is blurred, there is no blur in the direction perpendicular to
+the direction of motion.</li>
+<li>We apply a Gabor filter on the image to isolate the potential
+locations of the pattern.</li>
+<li>We find clusters of patches in the Gabor output.</li>
+<li>We perform the Principal Component Analysis (PCA) on each cluster to find
+the dominant direction unaffected by the blur.</li>
+<li>Based on the direction detected, we extract the intensity profile of the pattern and classify the fiducial.</li>
 </ul>
 
 <h3> Overview</h3>
