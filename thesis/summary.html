@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<html >
+<html>
 <head>
 
 <title>Explorations Through Quadcopters</title>
@@ -46,34 +45,25 @@ $(".scroll-to-top").click(function () {
 <div id="left">
 <div class="verticalmenu">
   <ul>
-    <li><a href="intro.html">Introduction</a></li>
-    <li><a href="summary.html">Summary</a>
+    <li><a href="intro.html"> Abstract </a></li>
+    <li><a href="summary.html"> Thesis in Nutshell  </a>
 <ul class="submenu">
-<li><a href="summary.html#vacant">Mosaicing Scenes With Vacant Spaces</a></li>
-<li><a href="summary.html#multiplanar">Imaging Multiplanar Scenes</a></li>
-<li><a href="summary.html#fiducial">Detecting Fiducials Under Blur</a></li>
+<li><a href="vacant.html">Mosaicing Scenes With Vacant Spaces</a></li>
+<li><a href="multiplanar.html">Imaging Multiplanar Scenes</a></li>
+<li><a href="fiducial.html">Detecting Fiducials Under Blur</a></li>
 </ul>
 </li>
-    <li><a href="results.html">Results</a></li>
+    <li><a href="results.html">Sample Results</a></li>
   </ul>
 </div> 
 
 </div>
 <div id="content">
-  <h1><u>Is Mosaicing Problem solved?</u></h1>
+  <h1><u>What is this thesis about?</u></h1>
     <br />
 <div id="vacant">
   <h2>Mosaicing Scenes With Vacant Spaces </h2>
 </div>
-One of the major contribution of this piece of the thesis is a method to create a mosaic of a scene containing vacant spaces using fusion
-of a standard stitching algorithm with positional data captured from a quadcotper.
-<h3>Challenges</h3>
-<ul>
-
-<li> The standard mosaicing methods use feature matching algorithms for
-  estimating the homography between two images.</li>
-
-<li> Feature matching algorithms require detection of sufficient features in both images for mosaicing.</li>
 
 <figure>
 <center>
@@ -82,191 +72,32 @@ of a standard stitching algorithm with positional data captured from a quadcotpe
 </center>
 </figure>
 
-<li> Scenes containing large regions with vacant spaces result in very few (or almost zero) features.</li>
+One of the major contribution of this piece of the thesis is a method to create a mosaic of a scene containing vacant spaces using fusion
+of a standard stitching algorithm with positional data captured from a quadcotper. <a href="vacant.html">Read more ...</a>
 
-<li> The feature matching algorithms get confused when parts of the scene are repeated.</li>
-
-<li> Popular mosaicing softwares such as Adobe Photoshop are unable to handle vacant spaces and repetitive patterns.</li>
-</ul>
-
-<figure>
-<center>
-<img width=600 src=images/vacantSpacesExample.png>
-<figcaption style="padding:10px;">Figure 2: Adobe Photoshop could not create a single mosaic of a scene containing vacant spaces.</figcaption>
-</center>
-</figure>
-
-<h3>Contributions</h3>
-<ul>
-<li> We propose to solve the vacant space problem by using additional positional information available 
-from an inertial measurement unit (IMU) onboard an inexpensive quadcopter.</li>
-
-<li> We use the IMU data for selection and ordering of images and creation of super-panorama. </li>
-
-<li> We use the IMU data to select representative images from the video and arrange
-  them into rectangular grid according to the `spatial' neighborhood. It also
-  disambiguates situations when multiple images that are spatially distant,
-  have similar, repeated features.</li>
-
-<li> Whenever there are no features in the overlapped region of two images, we use the IMU data to find the
-  relative position of one mini-panorama with respect to another.</li>
-
-<li>IMU data on a quadcopter cannot be relied exclusively, especially due to swift and jerky movements
-    of an inexpensive devices which may result in erroneous data. Complementing the IMU with information gleaned from
-    vision algorithms, however, may be a useful practice.</li>
-
-<li> We systematically acquire a video of the scene, reduce the input video to a manageable number of images,
-     and finally, combine the images acquired from different positions into a mosaic.</li>
-</ul>
-
-<h3> Overview</h3>
-<figure>
-<center>
-<img width=600 src=images/vacantSpacesWorkflow.png>
-<figcaption style="padding:10px;">Figure 3: Overview of mosaicing scenes with vacant spaces. </figcaption>
-</center>
-</figure>
-
-Input imagery is systematically acquired (top left) by a quadcopter.  In the next
-    step, interesting images are found by clustering the video into
-    regions based on positional data.  A graph is constructed using
-    proximal images. For each connected component in a graph, standard
-    stitching techniques are used to create mini-panoramas which are
-    then joined together into a super panorama 
-    again using IMU data.
 <div id="multiplanar">
  <h2> Imaging Multiplanar Scenes </h2>
 </div>
 We have many circumstances where the input scene is spread over multiple planes.
 In such cases, we would like to image each planar region orthographically and then 'unroll'
 the whole scene by joining the individual mosaics so that we get the output mosaic of the
-input scene as if it is present on a single plane.
-
-<h3>Challenges</h3>
-<ul>
-<li>Homography-based mosaicing algorithms cannot mosaic scenes spread over multiplanar surface.</li>
-
-<li> Manually controlling a quadcopter to image large planar regions smoothly by
-keeping a constant distance from the imaging plane is very difficult.</li>
-
-<li> A quadcopter has to be maneuvered along an estimated path such that it will cover
-the input scene in minimum time.</li>
-
-<li> We require accurate 3D coordinates of the region to be imaged on the fly for doing efficient path planning.</li>
-
-<li>Existing method like PTAM creates a 3D map for camera-based navigation of a quadcopter. However, it is not 
-sufficiently precise for our purposes due to inaccuracies in scale.</li>
-
-<li> Multiplanar imaging through quadcopter requires detection of multiplanar bounded regions
-in real-time.</li>
-<ul>
-<li>Existing methods such as J-linkage do not output the boundaries of planar regions.  Also, these methods cannot remove noisy points generated by erroneous PTAM as shown in Figure 4.</li>
-</ul>
-</ul>
-<figure>
-<center>
-<img width=600 src=images/JlinkageProblem.jpg>
-<figcaption style="padding:10px;">Figure 4: Problem in J-linkage clustering. Points marked by black ovals, actually correspond to opposite planes.</figcaption>
-</center>
-</figure>
-
-<h3>Contributions</h3>
-<ul>
-<li> We probe the input scene through a quadcopter, calculate the 3D positions of feature
-points using PTAM based method.</li>
-
-<li> We use our algorithm, an improvement over J-linkage to detect multiplanar bounded regions from the area 
-marked by the user through our user interface.</li>
-
-<li> Path planning is done for each planar bounded region to determine the camera positions in such a way that 
-images captured from those positions encompass the scene in an optimal manner.</li>
-
-<li>The quadcopter is autonomously maneuvered along the estimated path and videos are captured at target points. </li>
-
-<li>For each planar bounded region, the appropriate frame from each video is found and then given to a mosaicing algorithm. </li>
-
-<li>All individual mosaics are joined to get a full unrolled view as if the whole scene is present on a single plane.</li>
-</ul>
-
-<h3> Overview</h3>
-
-<figure>
-<center>
-<img width=600 src=images/multiplanarWorkflow.png>
-<figcaption style="padding:10px;">Figure 5: Overview of imaging multiplanar scenes. </figcaption>
-</center> 
-</figure>
-We probe the input scene through a quadcopter, calculate the 3D positions of feature points using PTAM
-based method. Later, we use our algorithm, an improvement over
-J-linkage to detect multiplanar bounded regions from the area
-marked by the user through our user interface. Path planning is done for each
-planar bounded region to determine the camera positions in such a way that
-images captured from those positions encompass the scene in an optimal manner.
-The quadcopter is autonomously maneuvered along the estimated path and videos
-are captured at target points. For each planar bounded region, the appropriate
-frame from each video is found and then given to a mosaicing algorithm. 
-Finally, all mosaics are joined to get a full unrolled view.
+input scene as if it is present on a single plane. <a href="multiplanar.html">Read more ...</a>
 
 <div id="fiducial">
  <h2> Detecting Fiducials Under Blur</h2>
 </div>
 
-A single quadcopter is not sufficient for imaging large multiplanar scenes due
-to energy constraints. Instead, we may use multiple quadcopters in
-collaboration for imaging multiplanar scenes. In such cases, we have to identify
-each quadcopter uniquely for accurate collaboration among multiple quadcopters.
-
-<h3>Challenges</h3>
-<ul>
-<li> Generally, fiducial markers such as ARTag are used to identify
-objects in the environment. </li>
-<li> A problem with existing fiducials is that low-cost
-quadcopters often exhibit very quick and erratic physical movements that result
-in motion blur.</li>
 <figure>
-
 <center>
 <img width=600 src=images/ARTagBlur.png>
 <figcaption style="padding:10px;">Figure 6: Fiducials such as ARTag cannot be detected in the presence of motion blur. </figcaption>
 </center>
 </figure>
 
-<li> This motion blur has an adverse effect on the recognition of fiducial
-markers. This can be seen in Figure 6 where the ARTag fiducial cannot be recognized due to motion blur.</li>
-
-<li> The dropped video frames from the quadcopter's wireless communication module may cause large
-discontinuities in the pattern's position. </li>
-<ul>
-<li>It makes it challenging to apply tracking algorithms
-that can exploit temporal coherence for determining the fiducial's position.</li>
-</ul>
-</ul>
-
-<h3>Contributions</h3>
-<ul>
-<li> We propose a fiducial that is designed to be resilient to motion blur.</li>
-<li> Our design is based on the observation that motion blur from a quadcopter tends to be linear in nature.  </li>
-<ul>
-<li>When our fiducial is blurred, there is no blur in the direction
-perpendicular to the direction of motion. </li>
-<li>This allows the signature of the fiducial to remain intact in any direction. </li>
-</ul>
-
-</ul>
-
-<h3> Overview</h3>
-<figure>
-<center>
-<img width=600 src=images/fiducialWorkflow.png>
-<figcaption style="padding:10px;">Figure 7: Overview of detection of blur resilient fiducials. </figcaption>
-</center> 
-
-In Step 1, we apply a Gabor filter on the image to isolate the potential locations of the pattern.  In
-Step 2, we find clusters of patches in the Gabor output.  In Step 3, we perform
-the Principal Component Analysis (PCA) on each cluster to find the dominant
-direction unaffected by the blur.  Finally in Step 4, based on the direction
-detected, we extract the intensity profile of the pattern and classify the
-fiducial.
+A single quadcopter is not sufficient for imaging large multiplanar scenes due
+to energy constraints. Instead, we may use multiple quadcopters in
+collaboration for imaging multiplanar scenes. In such cases, we have to identify
+each quadcopter uniquely for accurate collaboration among multiple quadcopters. <a href="fiducial.html">Read more ...</a>
 
 <br>
 </div><!-- end content -->

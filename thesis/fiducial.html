@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Explorations Through Quadcopters</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<meta name="description" content="FTM" />
+
+<link rel="stylesheet" href="touching.css" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+</script>
+<script>
+$(document).ready(function () {
+  $(".scroll-to-top").hide();
+  //Check to see if the window is top if not then display button
+  $(window).scroll(function () {
+  if ($(this).scrollTop() > 200) {
+    $(".scroll-to-top").fadeIn();
+  } else {
+    $(".scroll-to-top").fadeOut();
+  }
+});
+ 
+//Click event to scroll to top
+$(".scroll-to-top").click(function () {
+  $("html, body").animate({ scrollTop: 0 }, 800);
+  return false;
+  });
+});
+</script>
+
+</head>
+<body>
+
+<div class="scroll-to-top">
+<a href=”#”>Scroll<br>to Top</a>
+</div>
+
+<div id="container">
+<div id="banner">
+<div id="bannertitle">Explorations Through Quadcopters </div>
+</div>
+
+<div id="outer">
+<div id="inner">
+<div id="left">
+<div class="verticalmenu">
+  <ul>
+    <li><a href="intro.html"> Abstract </a></li>
+    <li><a href="summary.html"> Thesis in Nutshell  </a><ul class="submenu">
+<li><a href="vacant.html">Mosaicing Scenes With Vacant Spaces</a></li>
+<li><a href="multiplanar.html">Imaging Multiplanar Scenes</a></li>
+<li><a href="fiducial.html"><b>Detecting Fiducials Under Blur</b></a></li>
+</ul>
+</li>
+
+<li><a href="results.html">Sample Results</a></li>
+  </ul>
+</div> 
+
+</div>
+<div id="content">
+
+<div id="fiducial">
+ <h2> Detecting Fiducials Under Blur</h2>
+</div>
+
+A single quadcopter is not sufficient for imaging large multiplanar scenes due
+to energy constraints. Instead, we may use multiple quadcopters in
+collaboration for imaging multiplanar scenes. In such cases, we have to identify
+each quadcopter uniquely for accurate collaboration among multiple quadcopters.
+
+<h3>Challenges</h3>
+<ul>
+<li> Generally, fiducial markers such as ARTag are used to identify
+objects in the environment. </li>
+<li> A problem with existing fiducials is that low-cost
+quadcopters often exhibit very quick and erratic physical movements that result
+in motion blur.</li>
+
+<figure>
+<center>
+<img width=600 src=images/ARTagBlur.png>
+<figcaption style="padding:10px;">Figure 6: Fiducials such as ARTag cannot be detected in the presence of motion blur. </figcaption>
+</center>
+</figure>
+
+<li> This motion blur has an adverse effect on the recognition of fiducial
+markers. This can be seen in Figure 6 where the ARTag fiducial cannot be recognized due to motion blur.</li>
+
+<li> The dropped video frames from the quadcopter's wireless communication module may cause large
+discontinuities in the pattern's position. </li>
+<ul>
+<li>It makes it challenging to apply tracking algorithms
+that can exploit temporal coherence for determining the fiducial's position.</li>
+</ul>
+</ul>
+
+<h3>Contributions</h3>
+<ul>
+<li> We propose a fiducial that is designed to be resilient to motion blur.</li>
+<li> Our design is based on the observation that motion blur from a quadcopter tends to be linear in nature.  </li>
+<ul>
+<li>When our fiducial is blurred, there is no blur in the direction
+perpendicular to the direction of motion. </li>
+<li>This allows the signature of the fiducial to remain intact in any direction. </li>
+</ul>
+
+</ul>
+
+<h3> Overview</h3>
+<figure>
+<center>
+<img width=600 src=images/fiducialWorkflow.png>
+<figcaption style="padding:10px;">Figure 7: Overview of detection of blur resilient fiducials. </figcaption>
+</center> 
+
+In Step 1, we apply a Gabor filter on the image to isolate the potential locations of the pattern.  In
+Step 2, we find clusters of patches in the Gabor output.  In Step 3, we perform
+the Principal Component Analysis (PCA) on each cluster to find the dominant
+direction unaffected by the blur.  Finally in Step 4, based on the direction
+detected, we extract the intensity profile of the pattern and classify the
+fiducial.
+
+<br>
+</div><!-- end content -->
+</div><!-- end inner --> 
+</div><!-- end outer -->
+<div id="footer"></div>
+</div><!-- end container -->
+</body>
+</html>
