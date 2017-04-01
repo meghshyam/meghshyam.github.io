@@ -60,25 +60,26 @@ $(".scroll-to-top").click(function () {
 </div>
 <div id="content">
   <h1><u>What is this thesis about?</u></h1>
+</br>
 This thesis proposes methods to solve following problems faced during explorations through quadcopters. 
     <br />
 <div id="vacant">
   <h2>Mosaicing Scenes With Vacant Spaces </h2>
 </div>
-
+One of the major contribution of this piece of the thesis is a method to create a mosaic of a scene containing <a href="intro.html#vacantspaces"> vacant spaces </a> using fusion of a standard stitching algorithm with positional data captured from a quadcotper.  <a href="vacant.html">Read more ...</a>
 <figure>
 <center>
 <img width=600 src=images/vacantSpacesChallenge.png>
-<figcaption style="padding:10px;">Figure 1: Problems in mosaicing due to vacant spaces. </figcaption>
+<figcaption style="padding:10px;">Figure 1: Problems in mosaicing scenes with vacant spaces. </figcaption>
 </center>
 </figure>
-
-One of the major contribution of this piece of the thesis is a method to create a mosaic of a scene containing <a href="intro.html#vacantspaces"> vacant spaces </a> using fusion
-of a standard stitching algorithm with positional data captured from a quadcotper. <a href="vacant.html">Read more ...</a>
-
 <div id="multiplanar">
  <h2> Imaging Multiplanar Scenes </h2>
 </div>
+We have many circumstances where the input scene is spread over multiple planes.
+In such cases, we would like to image each planar region orthographically and then 'unroll'
+the whole scene by joining the individual mosaics so that we get the output mosaic of the
+input scene as if it is present on a single plane. <a href="multiplanar.html">Read more ...</a>
 <figure>
 <center>
 <img width=400 src=images/multiplanar.jpg>
@@ -87,26 +88,19 @@ In such cases, we output the <a href="intro.html#unrolled">unrolled</a> view of 
 </center>
 </figure>
 
-We have many circumstances where the input scene is spread over multiple planes.
-In such cases, we would like to image each planar region orthographically and then 'unroll'
-the whole scene by joining the individual mosaics so that we get the output mosaic of the
-input scene as if it is present on a single plane. <a href="multiplanar.html">Read more ...</a>
-
 <div id="fiducial">
  <h2> Detecting Fiducials Under Blur</h2>
 </div>
-
-<figure>
-<center>
-<img width=600 src=images/ARTagBlur.png>
-<figcaption style="padding:10px;">Figure 3: Fiducials such as ARTag cannot be detected in the presence of motion blur. </figcaption>
-</center>
-</figure>
-
 A single quadcopter is not sufficient for imaging large multiplanar scenes due
 to energy constraints. Instead, we may use multiple quadcopters in
 collaboration for imaging multiplanar scenes. In such cases, we have to identify
 each quadcopter uniquely for accurate collaboration among multiple quadcopters. <a href="fiducial.html">Read more ...</a>
+<figure>
+<center>
+<img width=600 src=images/ARTagBlur.png>
+<figcaption style="padding:10px;">Figure 3: <a href="https://en.wikipedia.org/wiki/Fiducial_marker">Fiducials</a> such as <a href="https://en.wikipedia.org/wiki/ARTag">ARTag</a> cannot be detected in the presence of motion blur. </figcaption>
+</center>
+</figure>
 
 <br>
 </div><!-- end content -->
