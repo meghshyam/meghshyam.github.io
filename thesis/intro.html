@@ -53,11 +53,26 @@
     <li/><a href="https://goo.gl/7WlRIZ">Synopsis</a>
   </ul> -->
   <h2>Abstract</h2>
-Digital imaging is omnipresent in today's world. There are many handheld cameras available in the market  which can take high definition pictures.  However, it is quite difficult to take satisfying pictures from a handheld camera in several scenarios, e.g., inspection of tall structures for cracks. Recently, Unmanned Aerial Vehicles (UAV) have gained focus for imaging in such situations. A quadcopter, or a quadrotor helicopter, is one of the UAVs that has great maneuvering and hovering ability. Due to its potential to go to inaccessible areas and to capture high-quality images from the onboard camera, quadcopter has become popular in various applications such as search and rescue.
-
+Digital imaging is being extensively used in in today's world. However, it is quite difficult to take acceptable pictures from a handheld
+camera in several situations, such as the inspection of nuclear reactors, dams, etc. <a href=https://en.wikipedia.org/wiki/Quadcopter>Quadcopters </a>can be used to image large planar surfaces from a close distance such as dams. However, the proximity results in a reduced field of view. Thus there is a need to create a panoramic representation from photos or videos taken from a flying craft. 
 <br></br>
-The work in this thesis revolves around three key methods for exploration of scenes through a quadcopter. First, we discuss a method for mosaicing scenes containing vacant spaces through quadcopter. This method handles scenes present only on single plane. Second, we generalize our first method to unroll scene spread over multiple planes. In this work, we introduce a technique for autonomous navigation of quadcopter for imaging. It is challenging to image a large scene spread over multiple planes using a single quadcopter. We can use multiple quadcopters in collaboration to achieve the same task in efficient manner. However, it requires that each quadcopter can identify every other quadcopter in reliable manner. We have designed blur resilient fiducials which can be put on quadcopters for robust tracking during collaboration among themselves.
-
+<div id="vacantspaces">
+If there are regions in the scene with few or no <a href = "https://en.wikipedia.org/wiki/Speeded_up_robust_features"> features </a> (e.g., gaps between regions, or textureless regions) or if patterns repeat in a scene (e.g., posters in an art exhibition), it is not possible for existing mosaicing techniques to construct a panorama. Lack of features i.e., <font color=blue><i>vacant spaces</i></font> confound the matching algorithm to stitch interesting images. Repeated features confuse the algorithm resulting in incorrect mosaicing. We solve these two problems by leveraging additional positional information from the Inertial Measurement Unit (<a href="https://en.wikipedia.org/wiki/Inertial_measurement_unit">IMU</a>) that is present on any quadcopter. 
+</div>
+</br>
+<div id="unrolled">
+Though we could build mosaic of large planar surfaces, in the real world, we expect to  encounter multiple piecewise planar surfaces, or even curved surfaces. Manually navigating the quadcopter around such large surfaces for the purpose of capturing a video footage is very tedious. We present a method for autonomous navigation of a quadcopter for imaging large multiplanar surfaces. The method uses the Parallel Tracking and Mapping (<a href="http://www.robots.ox.ac.uk/~gk/PTAM/">PTAM</a>) based approach to find the positions along which quadcopter is autonomously maneuvered. The eventual result is an <font color=blue><i>unrolled</i></font> view of the input scene where we get the output mosaic of the input scene as if it is present on a single plane.
+</div>
+</br>
+A quadcopter's limited battery is a major hurdle we experienced during
+the imaging of large multiplanar scenes.  We consider the use of
+multiple quadcopters to overcome this battery issue. To collaborate, the relative spatial
+position of the quadcopters have to be identified, so as to divide the
+work in an appropriate manner. <a href="https://en.wikipedia.org/wiki/Fiducial_marker">Fiducials</a> come to our rescue for
+tracking objects in this environment.
+At the same time, quadcopters are subject to quick and unstable motions that can cause
+significant motion blur in the captured images. This severely affects the
+detection rate of existing fiducials.  We propose the design of a fiducial that is resilient to motion blur, which can be placed on a quadcopter.
 </div><!-- end content -->
 </div><!-- end inner -->
 </div><!-- end outer -->

@@ -67,45 +67,55 @@ $(".scroll-to-top").click(function () {
 <h2>Mosaicing Scenes With Vacant Spaces</h2>
 </div>
 The result of our algorithm on a scene containing vacant spaces is shown in Figure 1.
-In this experiment, the input stream had about 4300 images. The selection algorithm pruned the video into five images. A sample of the selected images are seen in Figure 1(Left).
+In this experiment, the input stream had about 4300 images. The selection algorithm pruned the video into five images. A sample of the selected images are seen in <a href=#figure1>Figure 1</a>(Left).
 
+<div id="figure1">
 <figure>
 <center><img height=350 src=images/teaser.png>
 <figcaption style="padding:10px;">Figure 1: Output of our algorithm on a scene containing vacant spaces. </figcaption>
 </center>
 </figure>
+</div>
 
 There were two disconnected components in the resulting graph. Adobe Photoshop was unable to produce any reasonable output as seen in
-Figure 1.  The scene, captured from a distance is also shown.  We see a better orthographic view of the posters in our result shown in Figure 1(right bottom).
+<a href=#figure1>Figure 1</a>.  The scene, captured from a distance is also shown.  We see a better orthographic view of the posters in our result shown in <a href=#figure1> Figure 1</a> (right bottom).
 
 
 <div id = multiplanar>
 <h2> Imaging Multiplanar Scenes </h2>
 </div>
-Our experiments are done on various setups covering multiple planes. In one such experiment, paintings were arranged in the convex fashion as shown in Figure 2 (Top-Left). We have selected the area to be imaged as shown in Figure 2 (Top-Right). In the
-path planning stage, overall 30 (9 from the left plane, 12 from the middle plane, and 9
+Our experiments are done on various setups covering multiple planes. In one such experiment, paintings were arranged in the convex fashion as shown in <a href=#figure2>Figure 2</a> (Top-Left). We have selected the area to be imaged as shown in <a href=#figure2>Figure 2</a> (Top- Right). In the path planning stage, overall 30 (9 from the left plane, 12 from the middle plane, and 9
 from the right plane) positions to cover full region are estimated. Images captured from
 those positions are mosaiced using our algorithm to get the final mosaicing output as
-shown in the Figure 2 (Bottom).
+shown in the <a href=#figure2>Figure 2</a> (Bottom).
 
+<div id="figure2">
 <figure>
 <center><img height=350 src=images/multiplanarConvexResult.png>
 <figcaption style="padding:10px;">Figure 2: Imaging multiplanar scene. </figcaption>
 </center>
 </figure>
-
+</div>
 
 <div id = fiducial>
 </div>
 <h2> Detecting Fiducials under Motion Blur </h2>
-We put our fiducials on a quadcopter so that we can reliably recognize the quadcopters under motion. As seen in figure 3,
-we identify the code embedded in our fiducial put on the quadcopter, in the presence of significant amount of motion blur.
+We placed our fiducials on a quadcopter so that we can reliably recognize the quadcopters under motion. As seen in <a href=#figure3> Figure 3
+</a>, we identify the code embedded in our fiducial put on the quadcopter, in the presence of significant amount of motion blur.
+<div id="figure3">
 <figure>
 <center><img height=250 src=images/fiducialResult.png>
-<figcaption style="padding:10px;">Figure 3: Detecting fiducials put on the quadcopter. </figcaption>
+<figcaption style="padding:10px;">Figure 3: Recognizing fiducials placed on the quadcopter. </figcaption>
 </center>
 </figure>
 
+We could also recognize the fiducials place on the other objects from the video captured using shaky quadcopter.
+<figure>
+<center>
+<iframe width="600" height="400" src="http://www.youtube.com/embed/ibf9P-Coofw" frameborder="0" allowfullscreen></iframe>
+<figcaption style="padding:10px;">Figure 4: Recognizing fiducials from the quadcopter</figcaption>
+</div>
+</figure>
 
 </div><!-- end content -->
 </div><!-- end inner -->

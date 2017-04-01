@@ -69,18 +69,18 @@ of a standard stitching algorithm with positional data captured from a quadcotpe
 <ul>
 
 <li> The standard mosaicing methods use feature matching algorithms for
-  estimating the homography between two images.</li>
+  estimating the <a href="https://en.wikipedia.org/wiki/Homography_%28computer_vision%29">homography</a> between two images.</li>
 
-<li> Feature matching algorithms require detection of sufficient features in both images for mosaicing.</li>
+<li> Feature matching algorithms require detection of sufficient <a href = "https://en.wikipedia.org/wiki/Speeded_up_robust_features">features</a>. in both images for mosaicing.</li>
 
 <figure>
 <center>
 <img width=600 src=images/vacantSpacesChallenge.png>
-<figcaption style="padding:10px;">Figure 1: Problems in mosaicing due to vacant spaces. </figcaption>
+<figcaption style="padding:10px;">Figure 1: Problems in mosaicing due to <a href=intro.html#vacantspaces>vacant spaces</a>. </figcaption>
 </center>
 </figure>
 
-<li> Scenes containing large regions with vacant spaces result in very few (or almost zero) features.</li>
+<li> Scenes containing large regions with vacant spaces result in very few (or almost zero) <a href = "https://en.wikipedia.org/wiki/Speeded_up_robust_features">features</a>.</li>
 
 <li> The feature matching algorithms get confused when parts of the scene are repeated.</li>
 
@@ -90,31 +90,20 @@ of a standard stitching algorithm with positional data captured from a quadcotpe
 <figure>
 <center>
 <img width=600 src=images/vacantSpacesExample.png>
-<figcaption style="padding:10px;">Figure 2: Adobe Photoshop could not create a single mosaic of a scene containing vacant spaces.</figcaption>
+<figcaption style="padding:10px;">Figure 2: We could not create a single mosaic of a scene containing vacant spaces using state of the art mosaicing softwares such as Adobe Photoshop.</figcaption>
 </center>
 </figure>
 
 <h3>Contributions</h3>
 <ul>
-<li> We propose to solve the vacant space problem by using additional positional information available 
-from an inertial measurement unit (IMU) onboard an inexpensive quadcopter.</li>
 
-<li> We use the IMU data for selection and ordering of images and creation of super-panorama. </li>
+<li> We use the <a href="https://en.wikipedia.org/wiki/Inertial_measurement_unit">IMU</a> data to select representative images from the video and arrange them into rectangular grid according to the 'spatial' neighborhood. 
+<ul>
+<li> It brings down the number of images to be stitched to a manageable number. </li>
+<li>It also  disambiguates situations when multiple images that are spatially distant, have similar, repeated features.</li></ul>
+</li>
+<li> Whenever there are no <a href = "https://en.wikipedia.org/wiki/Speeded_up_robust_features">features</a> in the overlapped region of two images, we use the IMU data to find the relative position of one mini-panorama with respect to another.</li>
 
-<li> We use the IMU data to select representative images from the video and arrange
-  them into rectangular grid according to the `spatial' neighborhood. It also
-  disambiguates situations when multiple images that are spatially distant,
-  have similar, repeated features.</li>
-
-<li> Whenever there are no features in the overlapped region of two images, we use the IMU data to find the
-  relative position of one mini-panorama with respect to another.</li>
-
-<li>IMU data on a quadcopter cannot be relied exclusively, especially due to swift and jerky movements
-    of an inexpensive devices which may result in erroneous data. Complementing the IMU with information gleaned from
-    vision algorithms, however, may be a useful practice.</li>
-
-<li> We systematically acquire a video of the scene, reduce the input video to a manageable number of images,
-     and finally, combine the images acquired from different positions into a mosaic.</li>
 </ul>
 
 <h3> Overview</h3>
