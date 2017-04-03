@@ -65,15 +65,14 @@ $(".scroll-to-top").click(function () {
  <h2> Detecting Fiducials Under Blur</h2>
 </div>
 
-A single quadcopter is not sufficient for imaging large multiplanar scenes due
-to energy constraints. Instead, we may use multiple quadcopters in
-collaboration for imaging multiplanar scenes. In such cases, we have to identify
-each quadcopter uniquely for accurate collaboration among multiple quadcopters.
+Imaging large multiplanar scenes using a single quadcopter is difficult due to the insufficient power available in the
+battery. Multiple quadcopters can be used in such scenarios to work in collaboration. We require a mechanism to identify each
+quadcopter robustly.
 
 <h3>Challenges</h3>
 <ul>
 <li> Generally, fiducial markers such as <a href="https://en.wikipedia.org/wiki/ARTag">ARTag</a> are used to identify
-objects in the environment. </li>
+objects in an environment. </li>
 <li> A problem with existing fiducials is that low-cost
 quadcopters often exhibit very quick and erratic physical movements that result
 in motion blur.</li>

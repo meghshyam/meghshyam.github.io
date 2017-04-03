@@ -53,26 +53,23 @@
     <li/><a href="https://goo.gl/7WlRIZ">Synopsis</a>
   </ul> -->
   <h2>Abstract</h2>
-Digital imaging is being extensively used in in today's world. However, it is quite difficult to take acceptable pictures from a handheld
-camera in several situations, such as the inspection of nuclear reactors, dams, etc. <a href=https://en.wikipedia.org/wiki/Quadcopter>Quadcopters </a>can be used to image large planar surfaces from a close distance such as dams. However, the proximity results in a reduced field of view. Thus there is a need to create a panoramic representation from photos or videos taken from a flying craft. 
+Digital imaging is being extensively used in in today's world. That said, it is quite difficult to take acceptable pictures from a handheld
+camera in several situations, such as the inspection of large scale structures including nuclear reactors and dams. <a href=https://en.wikipedia.org/wiki/Quadcopter>Quadcopters </a>can be used to image large surfaces and from a close distance, thereby permitting detail. As a consequence of the the proximity, we end up with a reduced field of view, and thus there is a need to create a panoramic representation from photos or videos taken from a flying craft.  What (interesting) photos should we take, and from where to take them is a technical question that we address.
 <br></br>
 <div id="vacantspaces">
-If there are regions in the scene with few or no <a href = "https://en.wikipedia.org/wiki/Speeded_up_robust_features"> features </a> (e.g., gaps between regions, or textureless regions) or if patterns repeat in a scene (e.g., posters in an art exhibition), it is not possible for existing mosaicing techniques to construct a panorama. Lack of features i.e., <font color=blue><b>vacant spaces</b></font> confound the matching algorithm to stitch interesting images. Repeated features confuse the algorithm resulting in incorrect mosaicing. We solve these two problems by leveraging additional positional information from the Inertial Measurement Unit (<a href="https://en.wikipedia.org/wiki/Inertial_measurement_unit">IMU</a>) that is present on any quadcopter. 
+Further, if there are regions in the scene with few or no <a href = "https://en.wikipedia.org/wiki/Speeded_up_robust_features"> features </a> (e.g., gaps between regions, or even textureless regions as shown in <a href="vacant.html#vacantspaces">Figure 3</a>) or if patterns repeat in a scene (shown in <a href="vacant.html#repetitivePatterns">Figure 2</a>), it is not possible for existing mosaicing techniques to construct a panorama. Lack of features, a situation we term <a href="#vacantspaces">vacant spaces</a>, why not use italic confound the matching algorithm used to stitch interesting images. Similarly repeated features confuse the algorithm resulting in incorrect mosaicing. We argue that the panoramic mosaicing problem is unsolved, and we present solutions using  additional kinematic information present in the Inertial Measurement Unit (<a href="https://en.wikipedia.org/wiki/Inertial_measurement_unit">IMU</a>) of even the most inexpensive quadcopter. 
 </div>
 </br>
 <div id="unrolled">
-Though we could build mosaic of large planar surfaces, in the real world, we expect to  encounter multiple piecewise planar surfaces, or even curved surfaces. Manually navigating the quadcopter around such large surfaces for the purpose of capturing a video footage is very tedious. We present a method for autonomous navigation of a quadcopter for imaging large multiplanar surfaces. The method uses the Parallel Tracking and Mapping (<a href="http://www.robots.ox.ac.uk/~gk/PTAM/">PTAM</a>) based approach to find the positions along which quadcopter is autonomously maneuvered. The eventual result is an <font color=blue><b>unrolled</b></font> view of the input scene where we get the output mosaic of the input scene as if it is present on a single plane.
+With these ideas, we could build an image mosaic of very large planar surfaces. In the real world, we expect to  encounter multiple piecewise planar surfaces, or even curved surfaces. Manually navigating the quadcopter around such large surfaces for the purpose of capturing a "orthographic" video footage is tedious. We present a method for autonomous navigation of a quadcopter for imaging large multiplanar surfaces. The method uses the Parallel Tracking and Mapping (<a href="http://www.robots.ox.ac.uk/~gk/PTAM/">PTAM</a>) based approach to find the positions along which quadcopter is autonomously maneuvered. The eventual result is an <a href="#unrolled">unrolled</a>  view of the input scene where we get the output mosaic of the input scene as if it is present on a single plane.
 </div>
 </br>
-A quadcopter's limited battery is a major hurdle we experienced during
-the imaging of large multiplanar scenes.  We consider the use of
-multiple quadcopters to overcome this battery issue. To collaborate, the relative spatial
-position of the quadcopters have to be identified, so as to divide the
-work in an appropriate manner. <a href="https://en.wikipedia.org/wiki/Fiducial_marker">Fiducials</a> come to our rescue for
-tracking objects in this environment.
-At the same time, quadcopters are subject to quick and unstable motions that can cause
-significant motion blur in the captured images. This severely affects the
-detection rate of existing fiducials.  We propose the design of a fiducial that is resilient to motion blur, which can be placed on a quadcopter.
+A quadcopter's limited battery is a hurdle we experienced during
+the imaging of large multiplanar scenes.  We hypothesized the use of
+multiple quadcopters simultaneously to overcome this battery issue. To collaborate, the relative spatial position of the quadcopters have to be identified, so as to divide the
+work in an appropriate manner. <a href="https://en.wikipedia.org/wiki/Fiducial_marker">Fiducials</a> are necessary for tracking objects, but in our environment,
+the quadcopters are subject to quick and unstable motions. This causes
+significant motion blur in the captured images. This severely affects the detection of the quadcopters using existing fiducials.  We propose the design of a fiducial that is resilient to motion blur with the intention of placing these  on a quadcopter.
 </div><!-- end content -->
 </div><!-- end inner -->
 </div><!-- end outer -->

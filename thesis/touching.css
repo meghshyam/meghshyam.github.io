@@ -16,7 +16,7 @@ h1 {
     font-size: 20px;
     text-transform:uppercase;
 
-    margin:0px }
+	    margin:0px }
 
 h2 {
     color: #9A1212;
@@ -79,10 +79,10 @@ div#content {
 }
 
 #content a {
-    font-size: 13px;
+    font-size: 14px;
     display: inline;
     font: Verdana, Arial, Helvetica, sans-serif;
-    #color: #0A1212;
+    color: #0000EE;
     text-decoration: none;
     text-align: left;
     padding: 0px;
@@ -147,6 +147,7 @@ font-size: 10px;
     text-align: left;
     padding:10px;
 }
+
 .verticalmenu a:hover{
     color: #DDDDDD;
     background-color: #993233;
