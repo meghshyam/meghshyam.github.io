@@ -62,7 +62,8 @@ $(".scroll-to-top").click(function () {
 <div id="vacant">
   <h2>Mosaicing Scenes With Vacant Spaces </h2>
 </div>
-We solved problem of mosaicing scenes with vacant spaces using the positional information from IMU which is present on quadcopter.
+We solved the problem of mosaicing scenes with vacant spaces 
+  using the positional information from the IMU available on the quadcopter.
 
 <h3>Challenges</h3>
 <ul>
@@ -70,7 +71,8 @@ We solved problem of mosaicing scenes with vacant spaces using the positional in
 <li> The standard stitching methods use feature matching algorithms for
   estimating the <a href="https://en.wikipedia.org/wiki/Homography_%28computer_vision%29">homography</a> between two images.
 <ul>
-<li> Feature matching algorithms require detection of sufficient <a href = "https://en.wikipedia.org/wiki/Speeded_up_robust_features">features</a> in both images for mosaicing.</li>
+<li> Feature matching algorithms require detection of sufficient reliable
+  <a href = "https://en.wikipedia.org/wiki/Speeded_up_robust_features">features</a> in the images to be matched.</li>
 </ul>
 </li>
 
@@ -81,17 +83,20 @@ We solved problem of mosaicing scenes with vacant spaces using the positional in
 </center>
 </figure>
 
-<li> Scenes containing large regions with vacant spaces result in very few (or almost zero) <a href = "https://en.wikipedia.org/wiki/Speeded_up_robust_features">features</a>.</li>
+<li> Scenes containing large regions with vacant spaces result in 
+  very few (or almost zero) <a href = "https://en.wikipedia.org/wiki/Speeded_up_robust_features">features</a>.</li>
 
-<li> The feature matching algorithms get confused when parts of the scene are repeated.</li>
+<li> At other occasions, there are too many irrelevant features, when parts of the scene are repeated as seen in the example.</li>
 
 <div id="repetitivePatterns">
 <figure>
 <center>
 <img width=600 src=images/repetitivePatterns.png>
 </center>
-<figcaption style="padding:10px;">Figure 2: Repetitive patterns in the input scene pose a challenge for standard mosaicing methods
-such as <a href = "http://matthewalunbrown.com/autostitch/autostitch.html">AutoStitch</a>. Images taken from positions far apart from each other get stitched together as matching algorithm matches features from those images.
+<figcaption style="padding:10px;">Figure 2: Repetitive patterns in the input scene pose a challenge for standard 
+  mosaicing methods employed in state of the art software
+such as <a href = "http://matthewalunbrown.com/autostitch/autostitch.html">AutoStitch</a> or Photoshop. 
+  Images taken from positions far apart get stitched together as matching algorithm matches features from those images.
  </figcaption>
 </figure>
 </div>
@@ -104,7 +109,8 @@ such as <a href = "http://matthewalunbrown.com/autostitch/autostitch.html">AutoS
 <center>
 <img width=600 src=images/vacantSpacesExample.png>
 </center>
-<figcaption style="padding:10px;">Figure 3: One cannot create a single mosaic of a scene containing vacant spaces using state of the art stitching softwares such as Adobe Photoshop.</figcaption>
+<figcaption style="padding:10px;">Figure 3: One cannot create a single mosaic of a scene containing vacant spaces using 
+  state of the art stitching softwares such as Adobe Photoshop (this example) or AutoStitch.</figcaption>
 </figure>
 </div>
 
