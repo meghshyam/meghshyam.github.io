@@ -52,7 +52,7 @@ $(".scroll-to-top").click(function () {
 	<ul class=submenu>
 		<li><a href="results.html#vacant">Mosaicing Scenes With Vacant Spaces</a></li>
 		<li><a href="results.html#multiplanar">Imaging Multiplanar Scenes</a></li>
-		<li><a href="results.html#fiducial">Detecting Fiducials Under Blur</a></li>
+		<li><a href="results.html#fiducial">Recognizing Fiducials Under Blur</a></li>
 	</ul>
 </li>
 
@@ -67,7 +67,7 @@ $(".scroll-to-top").click(function () {
 <h2>Mosaicing Scenes With Vacant Spaces</h2>
 </div>
 The result of our algorithm on a scene containing <a href=intro.html#vacantspaces>vacant</a> spaces is shown in <a href=#figure1>Figure 1</a>.
-In this experiment, the input stream had about 4300 images. The selection algorithm pruned the video into five images. A sample of the selected images are seen in <a href=#figure1>Figure 1</a>(Left).
+In this experiment, the input stream had about 4300 images. The <a href="vacant.html#selectionalgo"> selection algorithm </a>pruned the video into five images. A sample of the selected images are seen in <a href=#figure1>Figure 1</a>(Left).
 
 <div id="figure1">
 <figure>
@@ -99,7 +99,7 @@ shown in the <a href=#figure2>Figure 2</a> (Bottom).
 
 <div id = fiducial>
 </div>
-<h2> Detecting Fiducials under Motion Blur </h2>
+<h2> Recognizing Fiducials under Motion Blur </h2>
 We placed our fiducials on a quadcopter so that we can reliably recognize the quadcopters under motion. As seen in <a href=#figure3> Figure 3
 </a>, we identify the code embedded in our fiducial put on the quadcopter, in the presence of significant amount of motion blur.
 <div id="figure3">

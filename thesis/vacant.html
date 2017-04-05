@@ -50,7 +50,7 @@ $(".scroll-to-top").click(function () {
 <ul class="submenu">
 <li><a href="vacant.html">Mosaicing Scenes With Vacant Spaces</a></li>
 <li><a href="multiplanar.html">Imaging Multiplanar Scenes</a></li>
-<li><a href="fiducial.html">Detecting Fiducials Under Blur</a></li>
+<li><a href="fiducial.html">Recognizing Fiducials Under Blur</a></li>
 </ul>
 </li>
     <li><a href="results.html">Sample Results</a></li>
@@ -110,12 +110,13 @@ such as <a href = "http://matthewalunbrown.com/autostitch/autostitch.html">AutoS
 
 <h3>Contributions</h3>
 <ul>
-
-<li> We use the <a href="https://en.wikipedia.org/wiki/Inertial_measurement_unit">IMU</a> data to select representative images from the video and arrange them into rectangular grid according to the 'spatial' neighborhood. 
+<div id="selectionalgo">
+<li> <b> Selection Algorithm:</b> We use the <a href="https://en.wikipedia.org/wiki/Inertial_measurement_unit">IMU</a> data to select representative images from the video and arrange them into rectangular grid according to the 'spatial' neighborhood. 
 <ul>
 <li> It brings down the number of images to be stitched to a manageable number. </li>
 <li>It also  disambiguates situations when multiple images that are spatially distant, have similar, repeated features.</li></ul>
 </li>
+</div>
 <li> Whenever there are no <a href = "https://en.wikipedia.org/wiki/Speeded_up_robust_features">features</a> in the overlapped region of two images, we use the IMU data to find the relative position of one mini-panorama with respect to another.</li>
 
 </ul>
