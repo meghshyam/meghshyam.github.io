@@ -61,17 +61,24 @@ $(".scroll-to-top").click(function () {
 <div id="content">
   <h1><u>What is this thesis about?</u></h1>
 </br>
-The goal of this thesis is to navigate an inexpensive off the shelf quadcopter like <a href="https://en.wikipedia.org/wiki/Parrot_AR.Drone">Parrot's AR.Drone 2.0</a> to image a scene spread over multiplanar surfaces autonomously and create an unrolled view of input scene. This thesis proposes methods to solve some of the problems faced with quadcopter-based explorations. 
+The goal of this thesis is to autonomously navigate an inexpensive, consumer grade quadcopter 
+  like the <a href="https://en.wikipedia.org/wiki/Parrot_AR.Drone">Parrot's AR.Drone</a> 
+  to image a large scene (spread over multiplanar surfaces), and create an <i> unrolled </i> view. 
+  This thesis proposes methods to solve some of the problems faced with quadcopter-based explorations. 
     <br />
 <div id="vacant">
   <h2>Mosaicing Scenes With Vacant Spaces </h2>
 </div>
-One of the major contribution of this piece of the thesis is a method to create a mosaic of a scene containing <a href="intro.html#vacantspaces"> vacant spaces </a> using fusion of a standard stitching algorithm with positional data captured from a quadcotper.  <a href="vacant.html">Read more ...</a>
+One of the major contribution of this piece of the thesis is a method to create a 
+  mosaic of a scene containing <i> vacant spaces </i> using a 
+  fusion of a standard vision-based stitching algorithm, with positional data captured from an IMU.
+  <a href="vacant.html">Read more ...</a>
 <figure>
 <center>
 <img width=600 src=images/vacantSpacesChallenge.png>
 </center>
-<figcaption style="padding:10px;">Figure 1: Vacant spaces are encountered in the imaging of this scene. When individual portions
+<figcaption style="padding:10px;">Figure 1: Vacant spaces are encountered in the imaging of this scene. 
+  When individual portions
 are captured by a quadcopter, how does one create the complete mosaic, given that common
 features are unavailable? In this example, α and α' can be aligned, and so can β and β'. This
 is not true for the constituents of the 5-tuple (α, A, B, C, and β).
