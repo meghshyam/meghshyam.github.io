@@ -79,7 +79,10 @@ Otherwise it seems to defeat the point of having three things on the left.  Than
 </div>
 The result of our algorithm on a scene containing <a href=intro.html#vacantspaces>vacant</a> spaces 
 	is shown in <a href=#figure1>Figure 1</a>.  <font color=red> avoid numbers in html as mentioned earlier. </font>
-In this experiment, the input stream had about 4300 images. The <a href="vacant.html#selectionalgo"> selection algorithm </a>pruned the video into five images. A sample of the selected images are seen in <a href=#figure1>Figure 1</a>(Left).
+In this experiment, the input stream had about 4300 images. 
+	The <a href="vacant.html#selectionalgo"> selection algorithm </a>pruned the 
+	video producing five images. 
+	A sample of the selected images are seen in <a href=#figure1>Figure 1</a>(Left).
 
 <div id="figure1">
 <figure>
@@ -89,31 +92,41 @@ In this experiment, the input stream had about 4300 images. The <a href="vacant.
 </figure>
 </div>
 
-There were two disconnected components in the resulting graph. We couldn't produce any reasonable output through Adobe Photoshop as seen in
-<a href=#figure1>Figure 1</a>.  The scene, captured from a distance is also shown.  We see a better orthographic view of the posters in our result shown in <a href=#figure1> Figure 1</a> (right bottom).
+There were two disconnected components in the resulting graph. 
+	The output from Adobe Photoshop resulted in an unfavourable output as seen in
+	<a href=#figure1>Figure 1</a>.  <font color=red> WHERE </font>
+	The scene, captured from a distance is also shown.   <font color=red> WHERE </font>
+	We see a better orthographic view of the posters in our result shown 
+	in <a href=#figure1> Figure 1</a> (right bottom).  <font color=red> NO NEED FOR "WHERE" now, but I need to mention 
+	that we should not mention Figure 1 but just Figure. Ideally all this stuff is best seen as a caption, incidentally </font>
 
-
+ <font color=red> The above should not be visible in anything except in vacant-results.html, and the below should not be visible in anything except
+	the respective pages such as multiplanar-results.html</font>
 <div id = multiplanar>
 <h2> Imaging Multiplanar Scenes </h2>
 </div>
-Our experiments are done on various setups covering multiple planes. In one such experiment, paintings were arranged in the convex fashion as shown in <a href=#figure2>Figure 2</a> (Top-Left). We have selected the area to be imaged as shown in <a href=#figure2>Figure 2</a> (Top- Right). In the path planning stage, overall 30 (9 from the left plane, 12 from the middle plane, and 9
-from the right plane) positions to cover full region are estimated. Images captured from
+Our experiments are done on various setups covering multiple planes. In one such experiment, 
+	paintings were arranged in the convex fashion as shown in <a href=#figure2>Figure 2</a> (Top-Left). <font color=red> No number </font>
+	The area to be <i> unrolled </i> is shown in <a href=#figure2>Figure 2</a> (Top- Right). 
+	In the path planning stage, overall 30 positions (9 from the left plane, 12 from the middle plane, and 9
+from the right plane) are estimated to cover the complete region of interest. Images captured from
 those positions are mosaiced using our algorithm to get the final mosaicing output as
-shown in the <a href=#figure2>Figure 2</a> (Bottom).
+shown in <a href=#figure2>Figure 2</a> (Bottom).
 
 <div id="figure2">
 <figure>
 <center><img height=350 src=images/multiplanarConvexResult.png>
-<figcaption style="padding:10px;">Figure 2: Imaging multiplanar scene. </figcaption>
+<figcaption style="padding:10px;">Figure 2: Imaging multiplanar scene. The unrolled scene appears as one long image as shown in the bottom.</figcaption>
 </center>
 </figure>
-</div>
+<font color=red> Earlier we wrote the explanation below the caption.  Now there is nothing.  </font>
+	</div>
 
 <div id = fiducial>
 </div>
 <h2> Recognizing Fiducials under Motion Blur </h2>
-We placed our fiducials on a quadcopter so that we can reliably recognize the quadcopters under motion. As seen in <a href=#figure3> Figure 3
-</a>, we identify the code embedded in our fiducial put on the quadcopter, in the presence of significant amount of motion blur.
+We placed our fiducials on a quadcopter so that we can reliably recognize  quadcopters under motion. As seen in <a href=#figure3> Figure 3
+</a>, we are able to both identify and classify the fiducial, even in the presence of significant amount of motion blur. 
 <div id="figure3">
 <figure>
 <center><img height=250 src=images/fiducialResult.png>
@@ -121,11 +134,14 @@ We placed our fiducials on a quadcopter so that we can reliably recognize the qu
 </center>
 </figure>
 
-We could also recognize the fiducials place on the other objects from the video captured using shaky quadcopter.
+A sample video, indicative of the uncertain, jerky motion of the craft has been shown. 
+	It can be seen that fiducials placed on objects undergoing relative motion are correctly classified.
+	
+	
 <figure>
 <center>
 <iframe width="600" height="400" src="http://www.youtube.com/embed/ibf9P-Coofw" frameborder="0" allowfullscreen></iframe>
-<figcaption style="padding:10px;">Figure 4: Recognizing fiducials from the quadcopter</figcaption>
+<figcaption style="padding:10px;">Figure 4: Recognizing fiducials from an inexpensive jerky quadcopter</figcaption>
 </div>
 </figure>
 
