@@ -80,20 +80,15 @@ in motion blur.</li>
 <figure>
 <center>
 <img width=600 src=images/ARTagBlur.png>
-<figcaption style="padding:10px;">Figure 1: Fiducials such as ARTag cannot be reliably identified in the presence of motion blur. </figcaption>
+<figcaption style="padding:10px;">Figure : Fiducials such as ARTag cannot be reliably identified in the presence of motion blur. </figcaption>
 </center>
 </figure>
 
 <li> This motion blur has an adverse effect on the recognition of fiducial
-markers. This can be seen in Figure 6  <font color=red> figure 6?  also looks like we are back to detection in the caption? </font> 
-  <s> where the ARTag fiducial cannot be 
-  recognized due to motion blur.</s>
-
-<li> The dropped video frames from the quadcopter's wireless communication module may cause large
-discontinuities in the pattern's position.  <font color=red> THIS POINT IS NOT CLEAR. DROP? </font>  </li>
+markers. This can be seen in above figure where the ARTag fiducial cannot be recognized due to motion blur.
+<li>The quadcopter uses <a href="https://en.wikipedia.org/wiki/User_Datagram_Protocol">UDP</a> to transfer video from quadcopter to controlling device. It effects in dropped video frames which causes discontinuities in pattern's position.</li>
 <ul>
-<li>It makes it  <font color=red> reword </font> challenging to apply tracking algorithms
-that can exploit temporal coherence for determining the fiducial's position.</li>
+<li>This makes it difficult to apply tracking algorithms which can exploit temporal coherence for determining the fiducial's position.</li>
 </ul>
 </ul>
 
@@ -102,8 +97,7 @@ that can exploit temporal coherence for determining the fiducial's position.</li
 <li> We propose a fiducial that is designed to be resilient to motion blur.</li>
 <li> Our design is based on the observation that motion blur from a quadcopter tends to be linear in nature.  </li>
 <ul>
-<li>When our fiducial is blurred, there is no blur in the direction
-perpendicular to the direction of motion. </li>
+<li>When our fiducial is blurred, there is no blur in the direction perpendicular to the direction of motion. </li>
 <li>This allows the signature of the fiducial to remain intact in any direction. </li>
 </ul>
 
@@ -113,7 +107,7 @@ perpendicular to the direction of motion. </li>
 <figure>
 <center>
 <img width=600 src=images/fiducialWorkflow.png>
-<figcaption style="padding:10px;">Figure 2: Overview of detection  <font color=red> back to detection </font>of blur resilient fiducials. </figcaption>
+<figcaption style="padding:10px;">Figure : Overview of recognition of blur resilient fiducials. </figcaption>
 </center> 
 
    

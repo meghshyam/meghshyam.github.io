@@ -61,14 +61,29 @@ $(".scroll-to-top").click(function () {
 
 </div>
 <div id="content">
-  <h1><u> Sample Results</u></h1>
-    <br />
 
-	<ol>
-	<li><a href="vacantResults.html">Mosaicing Scenes With Vacant Spaces</a></li>
-		<li><a href="multiplanarResults.html">Imaging Multiplanar Scenes</a></li>
-		<li><a href="fiducialResults.html">Recognizing Fiducials Under Blur</a></li>
-	</ol>
+<div id = vacant>
+
+<h2>Mosaicing Scenes With Vacant Spaces</h2>
+</div>
+The result of our algorithm on a scene containing <a href=intro.html#vacantspaces>vacant</a> spaces 
+	is shown in <a href=#figure1>Figure</a>. In this experiment, the input stream had about 4300 images. 
+	The <a href="vacant.html#selectionalgo"> selection algorithm </a>pruned the 
+	video producing five images. A sample of the selected images are seen in <a href=#figure1>Figure </a>(Left).
+
+<div id="figure1">
+<figure>
+<center><img height=350 src=images/teaser.png>
+<figcaption style="padding:10px;">Figure : Output of our algorithm on a scene containing vacant spaces. </figcaption>
+</center>
+</figure>
+</div>
+
+There were two disconnected components in the resulting graph. 
+	The output from Adobe Photoshop resulted in an unfavourable output as seen in
+	<a href=#figure1>Figure </a>(Middle).  
+	The scene, captured from a distance is also shown in <a href=#figure1> Figure </a>(Right-Top).  
+	We see a better orthographic view of the posters in our result shown in <a href=#figure1> Figure </a> . 
 
 </div><!-- end content -->
 </div><!-- end inner -->
@@ -77,5 +92,6 @@ $(".scroll-to-top").click(function () {
 </div><!-- end container -->
 </body>
 </html>
+
 
 

@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Explorations Through Quadcopters</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<meta name="description" content="FTM" />
+
+
+<link rel="stylesheet" href="touching.css" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+</script>
+<script>
+$(document).ready(function () {
+  $(".scroll-to-top").hide();
+  //Check to see if the window is top if not then display button
+  $(window).scroll(function () {
+  if ($(this).scrollTop() > 200) {
+    $(".scroll-to-top").fadeIn();
+  } else {
+    $(".scroll-to-top").fadeOut();
+  }
+});
+ 
+//Click event to scroll to top
+$(".scroll-to-top").click(function () {
+  $("html, body").animate({ scrollTop: 0 }, 800);
+  return false;
+  });
+});
+</script>
+
+</head>
+<body>
+<div class="scroll-to-top">
+<a href=”#”>Back<br>to Top</a>
+</div>
+
+<div id="container">
+<div id="banner">
+<div id="bannertitle">Explorations Through Quadcopters</div>
+</div>
+
+<div id="outer">
+<div id="inner">
+<div id="left">
+<div class="verticalmenu">
+  <ul>
+    <li><a href="intro.html"> Abstract </a></li>
+    <li><a href="summary.html"> Thesis in Nutshell  </a></li>
+    <li><a href="results.html">Sample Results</a>
+
+	<ul class=submenu>
+		<li><a href="results.html#vacant">Mosaicing Scenes With Vacant Spaces</a></li>
+		<li><a href="results.html#multiplanar">Imaging Multiplanar Scenes</a></li>
+		<li><a href="results.html#fiducial">Recognizing Fiducials Under Blur</a></li>
+	</ul>
+</li>
+
+  </ul>
+</div> 
+
+</div>
+<div id="content">
+  <h1><u> Sample Results</u></h1>
+    <br />
+
+		Can you drop these from a single page version to 
+	<ol>
+	<li> Link 1
+	<li> Link 2
+	<li> Link 3
+	</ol>
+Otherwise it seems to defeat the point of having three things on the left.  Thanks
+	
+	<div id = vacant>
+
+	
+<h2>Mosaicing Scenes With Vacant Spaces</h2>
+</div>
+The result of our algorithm on a scene containing <a href=intro.html#vacantspaces>vacant</a> spaces 
+	is shown in <a href=#figure1>Figure </a>. 
+In this experiment, the input stream had about 4300 images. 
+	The <a href="vacant.html#selectionalgo"> selection algorithm </a>pruned the 
+	video producing five images. 
+	A sample of the selected images are seen in <a href=#figure1>Figure </a>(Left).
+
+<div id="figure1">
+<figure>
+<center><img height=350 src=images/teaser.png>
+<figcaption style="padding:10px;">Figure : Output of our algorithm on a scene containing vacant spaces. </figcaption>
+</center>
+</figure>
+</div>
+
+There were two disconnected components in the resulting graph. 
+	The output from Adobe Photoshop resulted in an unfavourable output as seen in
+	<a href=#figure1>Figure (Middle)</a>.  
+	The scene, captured from a distance is also shown (right top).  
+	We see a better orthographic view of the posters in our result shown 
+	in <a href=#figure1> Figure </a> . 
+
+ <font color=red> The above should not be visible in anything except in vacant-results.html, and the below should not be visible in anything except
+	the respective pages such as multiplanar-results.html</font>
+<div id = multiplanar>
+<h2> Imaging Multiplanar Scenes </h2>
+</div>
+Our experiments are done on various setups covering multiple planes. In one such experiment, 
+	paintings were arranged in the convex fashion as shown in <a href=#figure2>Figure </a> (Top-Left). 
+	The area to be <i> unrolled </i> is shown in <a href=#figure2>Figure </a> (Top- Right). 
+	In the path planning stage, overall 30 positions (9 from the left plane, 12 from the middle plane, and 9
+from the right plane) are estimated to cover the complete region of interest. Images captured from
+those positions are mosaiced using our algorithm to get the final mosaicing output as
+shown in <a href=#figure2>Figure </a> (Bottom).
+
+<div id="figure2">
+<figure>
+<center><img height=350 src=images/multiplanarConvexResult.png>
+<figcaption style="padding:10px;">Figure : Imaging multiplanar scene. The unrolled scene appears as one long image as shown in the bottom.</figcaption>
+</center>
+</figure>
+<font color=red> Earlier we wrote the explanation below the caption.  Now there is nothing.  </font>
+	</div>
+
+<div id = fiducial>
+</div>
+<h2> Recognizing Fiducials under Motion Blur </h2>
+We placed our fiducials on a quadcopter so that we can reliably recognize  quadcopters under motion. As seen in <a href=#figure3> Figure 
+</a>, we are able to both identify and classify the fiducial, even in the presence of significant amount of motion blur. 
+<div id="figure3">
+<figure>
+<center><img height=250 src=images/fiducialResult.png>
+<figcaption style="padding:10px;">Figure : Recognizing fiducials placed on the quadcopter. </figcaption>
+</center>
+</figure>
+
+A sample video, indicative of the uncertain, jerky motion of the craft has been shown. 
+	It can be seen that fiducials placed on objects undergoing relative motion are correctly classified.
+	
+	
+<figure>
+<center>
+<iframe width="600" height="400" src="http://www.youtube.com/embed/ibf9P-Coofw" frameborder="0" allowfullscreen></iframe>
+<figcaption style="padding:10px;">Figure : Recognizing fiducials from an inexpensive jerky quadcopter</figcaption>
+</div>
+</figure>
+
+</div><!-- end content -->
+</div><!-- end inner -->
+</div><!-- end outer -->
+<div id="footer"></div>
+</div><!-- end container -->
+</body>
+</html>
+
+
