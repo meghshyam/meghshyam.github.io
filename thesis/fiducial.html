@@ -86,7 +86,9 @@ in motion blur.</li>
 
 <li> This motion blur has an adverse effect on the recognition of fiducial
 markers. This can be seen in above figure where the ARTag fiducial cannot be recognized due to motion blur.
-<li>The quadcopter uses <a href="https://en.wikipedia.org/wiki/User_Datagram_Protocol">UDP</a> to transfer video from quadcopter to controlling device. It effects in dropped video frames which causes discontinuities in pattern's position.</li>
+<li>The quadcopter uses the <a href="https://en.wikipedia.org/wiki/User_Datagram_Protocol">UDP</a> protocol to transfer 
+  videos from the quadcopter to the controlling device. As a result unpredictably many video frames are dropped, and this  
+  causes discontinuities in the location of the pattern.</li>
 <ul>
 <li>This makes it difficult to apply tracking algorithms which can exploit temporal coherence for determining the fiducial's position.</li>
 </ul>
