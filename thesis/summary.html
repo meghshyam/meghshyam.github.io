@@ -54,6 +54,7 @@ $(".scroll-to-top").click(function () {
 </ul>
 </li>
     <li><a href="results.html">Sample Results</a></li>
+<li><a href="publications.html">Publications</a></li>
   </ul>
 </div> 
 
@@ -72,12 +73,12 @@ The goal of this thesis is to autonomously navigate an inexpensive, consumer gra
 One of the major contribution of this piece of the thesis is a method to create a 
   mosaic of a scene containing <i> vacant spaces </i> using a 
   fusion of a standard vision-based stitching algorithm, with positional data captured from an IMU.
-  <a href="vacant.html">Read more ...</a>
+  <a href="vacant.html"><font color=blue >Read more ...</font></a>
 <figure>
 <center>
 <img width=600 src=images/vacantSpacesChallenge.png>
 </center>
-<figcaption style="padding:10px;">Figure : Vacant spaces are encountered in the imaging of this scene. 
+<figcaption style="padding:10px;">Vacant spaces are encountered in the imaging of this scene. 
   When individual portions
 are captured by a quadcopter, how does one create the complete mosaic, given that common
 features are unavailable? In this example, α and α' can be aligned, and so can β and β'. This
@@ -90,13 +91,13 @@ is not true for the constituents of the 5-tuple (α, A, B, C, and β).
 In many circumstances the input scene is spread over multiple planes.
 In such cases, we would like to image each planar region orthographically (and then create individual mosaics), and later 'unroll'
 the whole scene by joining the individual mosaics.  In effect,  we get the output mosaic of the
-input scene as if it were present on a single plane. <a href="multiplanar.html">Read more ...</a>
+input scene as if it were present on a single plane. <a href="multiplanar.html"><font color=blue >Read more ...</font></a>
 <figure>
 <center>
 <img width=400 src=images/multiplanar.jpg>
 </center>
-<figcaption style="padding:10px;">Figure : Imaging multiplanar scenes requires change in the orientation as well as position of camera. 
-In such cases, we output the <a href="summary.html#unrolled">unrolled</a> view of the input scene. </figcaption>
+<figcaption style="padding:10px;">Imaging multiplanar scenes requires change in the orientation as well as position of camera. 
+In such cases, we output the <a href="summary.html#unrolled"><font color=blue >unrolled</font></a> view of the input scene. </figcaption>
 </figure>
 
 <div id="fiducial">
@@ -105,11 +106,11 @@ In such cases, we output the <a href="summary.html#unrolled">unrolled</a> view o
 A single quadcopter is not sufficient for imaging large multiplanar scenes due
 to energy constraints. Instead, one may use multiple quadcopters in
 collaboration for imaging multiplanar scenes. In such cases, we have to identify
-each quadcopter uniquely for realistic collaboration among multiple quadcopters. <a href="fiducial.html">Read more ...</a>
+each quadcopter uniquely for realistic collaboration among multiple quadcopters. <a href="fiducial.html"><font color=blue >Read more ...</font></a>
 <figure>
 <center>
 <img width=600 src=images/ARTagBlur.png>
-<figcaption style="padding:10px;">Figure : <a href="https://en.wikipedia.org/wiki/Fiducial_marker">Fiducials</a> 
+<figcaption style="padding:10px;"><a href="https://en.wikipedia.org/wiki/Fiducial_marker">Fiducials</a> 
   such as <a href="https://en.wikipedia.org/wiki/ARTag">ARTag</a> can be recognized (green rectangles) on the left, but cannot be 
   recognized (on the right) in the presence of motion blur. </figcaption>
 </center>

@@ -54,6 +54,7 @@ $(".scroll-to-top").click(function () {
 </ul>
 </li>
     <li><a href="results.html">Sample Results</a></li>
+<li><a href="publications.html">Publications</a></li>
   </ul>
 </div> 
 
@@ -75,13 +76,18 @@ We solved the problem of mosaicing scenes with vacant spaces
   <a href = "https://en.wikipedia.org/wiki/Speeded_up_robust_features">features</a> in the images to be matched.</li>
 </ul>
 </li>
+<li> Popular stitching softwares such as Adobe Photoshop are unable to handle vacant spaces.</li>
+</ul>
 
+<div id="vacantspaces">
 <figure>
 <center>
-<img width=600 src=images/vacantSpacesChallenge.png>
-<figcaption style="padding:10px;">Figure 1: Problems in mosaicing due to <a href=intro.html#vacantspaces>vacant spaces</a>. </figcaption>
+<img width=600 src=images/vacantSpacesExample.png>
 </center>
+<figcaption style="padding:10px;">One cannot create a single mosaic of a scene containing vacant spaces using 
+  state of the art stitching softwares such as Adobe Photoshop (this example) or AutoStitch.</figcaption>
 </figure>
+</div>
 
 <li> Scenes containing large regions with vacant spaces result in 
   very few (or almost zero) <a href = "https://en.wikipedia.org/wiki/Speeded_up_robust_features">features</a>.</li>
@@ -93,7 +99,7 @@ We solved the problem of mosaicing scenes with vacant spaces
 <center>
 <img width=600 src=images/repetitivePatterns.png>
 </center>
-<figcaption style="padding:10px;">Figure 2: Repetitive patterns in the input scene pose a challenge for standard 
+<figcaption style="padding:10px;">Repetitive patterns in the input scene pose a challenge for standard 
   mosaicing methods employed in state of the art software
 such as <a href = "http://matthewalunbrown.com/autostitch/autostitch.html">AutoStitch</a> or Photoshop. 
   Images taken from positions far apart get stitched together as the algorithm matches features from those repeated patterns.
@@ -101,18 +107,7 @@ such as <a href = "http://matthewalunbrown.com/autostitch/autostitch.html">AutoS
 </figure>
 </div>
 
-<li> Popular stitching softwares such as Adobe Photoshop are unable to handle vacant spaces.</li>
-</ul>
 
-<div id="vacantspaces">
-<figure>
-<center>
-<img width=600 src=images/vacantSpacesExample.png>
-</center>
-<figcaption style="padding:10px;">Figure 3: One cannot create a single mosaic of a scene containing vacant spaces using 
-  state of the art stitching softwares such as Adobe Photoshop (this example) or AutoStitch.</figcaption>
-</figure>
-</div>
 
 <h3>Contributions</h3>
 <ul>
@@ -133,7 +128,7 @@ such as <a href = "http://matthewalunbrown.com/autostitch/autostitch.html">AutoS
 <figure>
 <center>
 <img width=600 src=images/vacantSpacesWorkflow.png>
-<figcaption style="padding:10px;">Figure 4: Overview of mosaicing scenes with vacant spaces. </figcaption>
+<figcaption style="padding:10px;">Overview of mosaicing scenes with vacant spaces. </figcaption>
 </center>
 </figure>
 
