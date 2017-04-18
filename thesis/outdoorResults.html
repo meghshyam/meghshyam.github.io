@@ -69,23 +69,20 @@ $(".scroll-to-top").click(function () {
 </div>
 <div id ="planar">
 
-We have done experiments on large outdoor scenes spread over single planar surface. In one such experiment, 
-there was a painting on a large wall (15 feet height) as shown in <a href=#figure2><font color=blue >Figure 1</font></a> (Left).
+In this sample, we demonstrate results on a large outdoor scene. A 15 feet wall has a painting from an urban artist
+	as shown in the long range photograph <a href=#figure2><font color=blue >Figure 1</font></a> on the left.
 
 <div id="figure1">
 <figure>
 <center><img height=350 src=images/ladyResult.png>
 </center>
-<figcaption style="padding:10px;">Figure 1: Autonomous imaging of a large outdoor scene. We have to cover the scene in two steps (shown in middle) to capture the details. Final mosaic is shown in the right.
+<figcaption style="padding:10px;">Figure 1: Autonomous imaging of a large outdoor scene. 
 </figcaption>
 </figure>
 </div>
 
-As the wall was too tall and it was not possible to view the full wall in one flash due to a shortage of space, we
-selected the desired area in two steps as shown in <a href=#figure1><font color=blue >Figure 1</font></a>(Middle). 
-In path planning stage, 37 positions (12 for the top part and 25 for the bottom part)  were estimated to
-encompass the user-selected area. Images captured from those positions are
-mosaiced using our algorithm to get the final mosaicing output as shown in <a href=#figure1><font color=blue >Figure 1</font></a>(Right).
+To demonstrate path planning with multiple visits, the quadcopter explored the wall twice as indicated in the middle section. The path planning stage resulted in 37 positions at which images were captured. There were 12 for the first visit (top),  and 25 for the second part. Images captured from those positions are individually
+mosaiced, and then combined to get the final mosaicing output as shown in <a href=#figure1><font color=blue >Figure 1</font></a>(Right).
 </div>
 
 </div><!-- end content -->
